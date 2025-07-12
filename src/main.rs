@@ -58,7 +58,6 @@ fn main() {
         }
 
 
-        println!("Acceleration at second {:?}: {:?}m/s, {:?}km/h. Distance from earth's surface: {:?}km", second, speed_ms.as_f64(), speed_kmh.as_f64(), rocket_altitude / 1000.);
-        println!("Drag acceleration: {}", drag_acceleration_force);
+        println!("Acceleration at second {:.3}: {:.3}m/s, {:.3}km/h. Distance from earth's surface: {:.3}km. Drag acceleration {:.3}m/s.", second, speed_ms.as_f64(), speed_kmh.as_f64(), rocket_altitude / 1000., drag_acceleration_force);
     }
 }
