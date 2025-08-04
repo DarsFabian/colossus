@@ -1,7 +1,7 @@
 mod units;
 mod physics;
 
-use physics::{vectors::Vector2, body::Body, constants::NEWTONIAN_CONSTANT_OF_GRAVITATION};
+use physics::{vectors::Vector2, body::Body2, constants::NEWTONIAN_CONSTANT_OF_GRAVITATION};
 use units::mass::Kg;
 use units::speed::{MetersPerSecond, KmPerHour};
 use physics::constants::{EARTH_MASS_KG, EARTH_RADIUS};
@@ -13,12 +13,12 @@ fn main() {
     let earth_velocity: Vector2 = Vector2::from(0.0, 0.0);
     let earth_mass: Kg = Kg::new(EARTH_MASS_KG);
     let earth_radius: f64 = EARTH_RADIUS;
-    let earth: Body = Body::new(earth_position, earth_velocity, earth_mass, earth_radius);
+    let earth: Body2 = Body2::new(earth_position, earth_velocity, earth_mass, earth_radius);
 
     let rocket_position: Vector2 = Vector2::from(earth.get_pos().get_x(), earth.get_pos().get_y() + EARTH_RADIUS + 100.);
     let rocket_velocity: Vector2 = Vector2::from(0., 30.);
     let rocket_mass: Kg = Kg::new(1000.);
-    let mut rocket: Body = Body::new(rocket_position, rocket_velocity, rocket_mass, 0.);
+    let mut rocket: Body2 = Body2::new(rocket_position, rocket_velocity, rocket_mass, 0.);
 
     for second in 0..1000 {
 
